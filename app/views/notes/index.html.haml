@@ -1,0 +1,10 @@
+%ul
+  - notes.each do |note|
+    %li
+      %dl
+        %dt Title
+        %dd 
+          = link_to "#{note.title}", note_path(note)
+        %dt Content
+        %dd 
+          = note.content
