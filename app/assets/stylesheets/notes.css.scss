@@ -67,7 +67,7 @@
 
   &:hover {
     .destroy-note {
-      display: block;
+      display: block; 
     }
   }
 
@@ -78,5 +78,7 @@
     }
   }
 
-
+  &.error {
+    border-color: red;
+  }
 }
