@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'backbone-on-rails', '~> 1.1.0.0'
 gem 'lodash-rails', '~> 2.2.1'
 gem 'haml'
+gem 'momentjs-rails', '~> 2.4.0'
 
 group :development do
   gem 'spring'

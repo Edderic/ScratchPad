@@ -5,6 +5,7 @@ class App.Views.ShowNote extends Backbone.View
 
   initialize: ->
     @listenTo(@model, "invalid", @addError)
+    @lastUpdated = new App.Views.LastUpdated(model: @model)
 
   events:
     'change': 'save'
@@ -15,7 +16,12 @@ class App.Views.ShowNote extends Backbone.View
 
   render: ->
     @$el.html(@template(note: @model))
+    @lastUpdated.setElement(@$('.normal-footer')).render()   
     this
+
+  remove: ->
+    @lastUpdated.remove(arguments...)   # needed to prevent memory leaks
+    super(arguments...)
 
   save: ->
     @model.set
@@ -31,7 +37,7 @@ class App.Views.ShowNote extends Backbone.View
   beginEditing: ->
     @$el.addClass('editing')
     @$el.removeClass('error')
-    
+
   endEditing: ->
     @$el.removeClass('editing')
 
