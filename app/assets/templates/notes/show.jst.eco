@@ -1,9 +1,9 @@
 <header class="title-container">
-  <input type="text" class="note-title" value="<%- @note.get("title") %>" />
+  <input type="text" class="note-title" placeholder="Title..." value="<%- @note.get("title") %>" />
 <header>
 
 <div class="body">
-  <textarea class="note-content"><%= @note.get("content") %></textarea>
+  <textarea class="note-content" placeholder="Content..."><%= @note.get("content") %></textarea>
 </div>
 
 <div class="footer">
