@@ -58,10 +58,25 @@
     display: none;
   }
 
+  .destroy-note {
+    position: absolute;
+    top: 7px;
+    right: 5px;
+    display: none;
+  }
+
+  &:hover {
+    .destroy-note {
+      display: block;
+    }
+  }
+
   &.editing {
     border-color: blue;
     .footer {
       display: block;
     }
   }
+
+
 }
