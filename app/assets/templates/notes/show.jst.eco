@@ -1,0 +1,11 @@
+<header class="title-container">
+  <input type="text" class="note-title" value="<%- @note.get("title") %>" />
+<header>
+
+<div class="body">
+  <textarea class="note-content"><%= @note.get("content") %></textarea>
+</div>
+
+<div class="footer">
+  <button class='save'>Save</button>
+</div>

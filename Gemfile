@@ -20,7 +20,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-
+gem 'thin'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -32,6 +32,7 @@ gem 'haml'
 group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
+  gem 'pry-rails'
 end
 
 group :doc do

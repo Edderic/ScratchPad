@@ -1,0 +1,6 @@
+<script>
+  // Don't need to fetch everytime? Caching?
+  // ScratchPad.AllNotes = new ScratchPad.Collections.Notes(<%= raw notes.to_json %>)
+  // Check app/assets/javascripts/scratch_pad.js.coffee
+  ScratchPad.notesJson = <%= raw notes.to_json %> 
+</script>
