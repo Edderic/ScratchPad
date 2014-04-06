@@ -6,10 +6,12 @@ window.ScratchPad =
   initialize: -> 
     # @AllNotes = new @Collections.Notes
     # @AllNotes.fetch().done =>
-    @AllNotes = new @Collections.Notes(@notesJson)
+    @AllNotes = new @Collections.Notes(@notesJson, parse: true)
 
     view = new @Views.Notes(collection: @AllNotes)
     $('#container').html(view.render().el)
+
+
 
 window.App = window.ScratchPad
 $(document).ready ->
