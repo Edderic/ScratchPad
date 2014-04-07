@@ -7,10 +7,13 @@ window.ScratchPad =
     # @AllNotes = new @Collections.Notes
     # @AllNotes.fetch().done =>
     @AllNotes = new @Collections.Notes(@notesJson, parse: true)
-
     view = new @Views.Notes(collection: @AllNotes)
     $('#container').html(view.render().el)
 
+  viewFor: (model) ->
+    modelClass = model.constructor.name
+    viewClass = @Views[modelClass]
+    new viewClass(model: model)
 
 
 window.App = window.ScratchPad

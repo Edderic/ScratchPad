@@ -1,4 +1,4 @@
 class Note < ActiveRecord::Base
-  belongs_to :body, polymorphic: true, autosave: true, dependent: :destroy   #, inverse_of:
+  belongs_to :body, polymorphic: true, autosave: true, inverse_of: :note, dependent: :destroy
 
 end
