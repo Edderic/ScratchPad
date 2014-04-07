@@ -1,5 +1,4 @@
 class App.Views.Notes extends Backbone.View
-  # template: _.template "<div>Hello, <%= name %></div>"
   template: JST['notes/index'] 
  
   initialize: -> # called after backbone loads
@@ -7,12 +6,9 @@ class App.Views.Notes extends Backbone.View
     @listenTo(@collection, 'reset', @render)
     @listenTo(@collection, 'add', @renderNote)
 
-  render: =>
-    # @$('.jquery-selector') same as @$el.find('.jquery-selector') 
-    #@$el same as $(@.el) or $(this.el)
- 
+  render: => 
     @$el.html(@template())
-    @collection.forEach(@renderNote) # forEach is coming from underscore  
+    @collection.forEach(@renderNote)
     @$el.append(@addActions.render().el)
     this  
 

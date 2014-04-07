@@ -15,6 +15,7 @@ class App.Models.StickyNote extends Backbone.Model
     delete data.body
     data
 
+
   toJSON: ->
     {
       title: @get('title')

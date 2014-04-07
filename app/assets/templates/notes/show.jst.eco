@@ -1,5 +1,5 @@
 <header class="title-container">
-  <input type="text" class="note-title" placeholder="Title..." value="<% @note.get("title") %>" />
+  <input type="text" class="note-title" placeholder="Title..." value="<%= @note.get("title") %>" />
 <header>
 
 <div class="body">
