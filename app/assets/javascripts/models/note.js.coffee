@@ -11,8 +11,15 @@ class App.Models.Note extends Backbone.Model
   # info from client-side will undergo to_json, conversely.
 
   parse: (data) ->
-    data.content = data.body.content
+    data.content = data.body.sticky_note.content
     delete data.body
-    delete data.body_type
-    delete data.body_id
     data
+
+  toJSON: ->
+    {
+      title: @get('title')
+      body:
+        type: 'sticky_note'
+        sticky_note:
+          content: @get('content')
+    }

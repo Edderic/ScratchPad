@@ -8,11 +8,17 @@ class NotesController < ApplicationController
   end
 
   def create
-    note = Note.create(note_params)
+    note = Note.create(note_params) # smelly. What if note saves but note form doesn't (i.e. failed validations?)
+    NoteForm.new(note, params).save
+    respond_with(note) do |format|
+      format.json { render json: note }
+    end
   end
 
   def update
-    note.update_attributes(note_params)
+    # note.update_attributes(note_params)
+    # binding.pry
+    NoteForm.new(note, params).save
     respond_with(note) do |format|
       format.json { render json: note }
     end
